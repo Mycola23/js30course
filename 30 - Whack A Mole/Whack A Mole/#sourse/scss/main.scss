@@ -1,0 +1,104 @@
+@import "_nullstyle";
+@import "_mixin";
+//under development
+// promixes ------
+
+// Don`t forgot cascadeee ------
+html {
+}
+body {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    //background: linear-gradient(135deg, #7c1599 0%, #921099 48%, #7e4ae8 100%);
+    background: #ffc600;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+[class*="__container"] {
+    // @include adaptive-value(padding-left, 15, 40, $minWidth, $maxWidth);
+    //@include adaptive-value(padding-right, 15, 40, $minWidth, $maxWidth);
+}
+html {
+    font-size: 10px;
+    background: #ffc600;
+}
+
+body {
+    font-family: "Amatic SC", cursive;
+}
+
+h1 {
+    text-align: center;
+    @include adaptive-value(font-size, 30, 100, $minWidth, $maxWidth);
+    line-height: 1;
+    margin-bottom: 0;
+    margin-bottom: 25px;
+}
+
+.score {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0 3rem;
+    line-height: 1;
+    border-radius: 1rem;
+}
+.btn__start-game {
+    padding: 30px 50px;
+    @include adaptive-value(font-size, 20, 45, $minWidth, $maxWidth);
+    background: #000000;
+    color: #fff;
+    border-radius: 2% 5% 1% 7%;
+    box-shadow: -4px -5px 1px #00000059;
+    @media (hover: hover) {
+        &:hover {
+            color: #ffc600;
+        }
+    }
+}
+.game {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.hole {
+    flex: 1 0 33.33%;
+    overflow: hidden;
+    position: relative;
+}
+
+.hole:after {
+    display: block;
+    background: url("/img/dirt.svg") bottom center no-repeat;
+    background-size: contain;
+    content: "";
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    z-index: 2;
+    bottom: -30px;
+}
+
+.mole {
+    background: url("/img/mole.svg") bottom center no-repeat;
+    background-size: 60%;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s;
+}
+
+.hole.up .mole {
+    top: 0;
+}
