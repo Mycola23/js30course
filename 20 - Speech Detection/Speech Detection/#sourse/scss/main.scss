@@ -1,0 +1,76 @@
+@import "_nullstyle";
+@import "_mixin";
+//under development
+// promixes ------
+
+// Don`t forgot cascadeee ------
+html {
+}
+body {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    //background: linear-gradient(135deg, #7c1599 0%, #921099 48%, #7e4ae8 100%);
+    background: #ffc600;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+[class*="__container"] {
+    // @include adaptive-value(padding-left, 15, 40, $minWidth, $maxWidth);
+    //@include adaptive-value(padding-right, 15, 40, $minWidth, $maxWidth);
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background: #ffc600;
+    font-family: "helvetica neue";
+    font-weight: 200;
+    font-size: 20px;
+}
+.title {
+    font-size: 5.5rem;
+    color: $darkColor;
+    font-weight: 600;
+    font-style: oblique;
+    text-shadow:
+        -20px 1.875rem 0px #fff,
+        2px 3.75rem 0px #bd7e4a;
+    margin-bottom: 1.5625rem;
+}
+.words {
+    width: 90vw;
+    margin: 50px auto;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem 1rem 5rem;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9eaf3), color-stop(4%, #fff)) 0 4px;
+    background-size: 100% 3rem;
+    position: relative;
+    line-height: 3rem;
+}
+
+p {
+    margin: 0 0 3rem;
+}
+
+.words:before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    top: 0;
+    left: 30px;
+    bottom: 0;
+    border: 1px solid;
+    border-color: transparent #efe4e4;
+}

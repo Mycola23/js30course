@@ -1,0 +1,280 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input {
+  outline: none;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*----------------*/
+body {
+  font-family: "Playfair Display";
+  font-size: 1rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #ffc600;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+}
+
+.photobooth {
+  background: white;
+  width: 80%;
+  margin: 2.5rem auto;
+  border-radius: 2px;
+  background: transparent;
+}
+
+/*clearfix*/
+.photobooth:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.photo {
+  width: 100%;
+  float: left;
+}
+
+.player {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 20%;
+}
+
+.controls {
+  font-size: calc(18px + 4 * calc(100vw - (320px)) / 1120);
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  margin-bottom: 45px;
+}
+.controls__take-photo-btn {
+  margin-bottom: 25px;
+  background-color: #3dd1e7;
+  border: 0 solid #e5e7eb;
+  color: #000000;
+  display: flex;
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: 0.75rem 1.65rem;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration: none #000000 solid;
+          text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  width: 100%;
+  max-width: 150px;
+  position: relative;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  -moz-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.controls__take-photo-btn {
+  outline: 0;
+}
+.controls__take-photo-btn:after {
+  content: "";
+  position: absolute;
+  border: 1px solid #000000;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+.controls__take-photo-btn:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+@media (min-width: 768px) {
+  .controls__take-photo-btn {
+    padding: 0.75rem 3rem;
+    font-size: 1.25rem;
+  }
+}
+.controls .rgb {
+  transition: all 0.3s ease-in 0s;
+  opacity: 0;
+  max-height: 0;
+}
+.controls .rgb.active {
+  opacity: 1;
+  max-height: 100%;
+}
+.controls input[type=range] {
+  -webkit-appearance: none; /* Removes default styles (Safari, Chrome) */
+  -moz-appearance: none; /* Removes default styles (Firefox) */
+  appearance: none; /* Removes default styles (modern browsers) */
+  width: 100%; /* Set the width of the range slider */
+  height: 8px; /* Height of the slider track */
+  background: #ddd; /* Track background color */
+  border-radius: 5px; /* Rounded corners for the track */
+  outline: none; /* Remove focus outline */
+  opacity: 0.9; /* Slight transparency */
+  transition: opacity 0.3s ease;
+}
+.controls input[type=range]:hover {
+  opacity: 1; /* Fully visible on hover */
+}
+.controls input[type=range]::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, #d8ecee, #3bd7ee); /* Gradient color */
+  height: 8px; /* Height of the track */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+}
+.controls input[type=range]::-moz-range-track {
+  background: linear-gradient(to right, #d8ecee, #3bd7ee);
+  height: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.controls input[type=range]::-webkit-slider-thumb {
+  transform: translateY(-45%);
+  -webkit-appearance: none; /* Remove default appearance */
+  width: 20px; /* Width of the thumb */
+  height: 20px; /* Height of the thumb */
+  background: #ffffff; /* Thumb color */
+  border-radius: 50%; /* Circular thumb */
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+.controls input[type=range]::-moz-range-thumb {
+  transform: translateY(-45%);
+  width: 20px;
+  height: 20px;
+  background: #4caf50;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.controls input[type=range]:active::-webkit-slider-thumb {
+  transform: scale(1.15) translateY(-45%);
+  background: #abf3ec; /* Change color when active */
+}
+.controls input[type=range]:focus::-webkit-slider-thumb {
+  outline: 2px solid #1edeef; /* Add a focus outline */
+}
+
+/*
+    Strip!
+  */
+.strip {
+  padding: 2rem;
+}
+
+.strip img {
+  width: 100px;
+  overflow-x: scroll;
+  padding: 0.8rem 0.8rem 2.5rem 0.8rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  background: white;
+}
+
+.strip a:nth-child(5n+1) img {
+  transform: rotate(10deg);
+}
+
+.strip a:nth-child(5n+2) img {
+  transform: rotate(-2deg);
+}
+
+.strip a:nth-child(5n+3) img {
+  transform: rotate(8deg);
+}
+
+.strip a:nth-child(5n+4) img {
+  transform: rotate(-11deg);
+}
+
+.strip a:nth-child(5n+5) img {
+  transform: rotate(12deg);
+}

@@ -1,0 +1,224 @@
+@import "_nullstyle";
+@import "_mixin";
+//under development
+// promixes ------
+
+// Don`t forgot cascadeee ------
+html {
+}
+body {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    //background: linear-gradient(135deg, #7c1599 0%, #921099 48%, #7e4ae8 100%);
+    background: #ffc600;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+[class*="__container"] {
+    // @include adaptive-value(padding-left, 15, 40, $minWidth, $maxWidth);
+    //@include adaptive-value(padding-right, 15, 40, $minWidth, $maxWidth);
+}
+
+.photobooth {
+    background: white;
+    width: 80%;
+    margin: 2.5rem auto;
+    border-radius: 2px;
+    background: transparent;
+}
+
+/*clearfix*/
+.photobooth:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.photo {
+    width: 100%;
+    float: left;
+}
+
+.player {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20%;
+}
+.controls {
+    @include adaptive-value(font-size, 18, 22, $minWidth, $maxWidth);
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    margin-bottom: 45px;
+    &__take-photo-btn {
+        margin-bottom: 25px;
+        background-color: #3dd1e7;
+        border: 0 solid #e5e7eb;
+        color: #000000;
+        display: flex;
+        font-family:
+            ui-sans-serif,
+            system-ui,
+            -apple-system,
+            system-ui,
+            "Segoe UI",
+            Roboto,
+            "Helvetica Neue",
+            Arial,
+            "Noto Sans",
+            sans-serif,
+            "Apple Color Emoji",
+            "Segoe UI Emoji",
+            "Segoe UI Symbol",
+            "Noto Color Emoji";
+        font-size: 1rem;
+        font-weight: 700;
+        justify-content: center;
+        line-height: 1.75rem;
+        padding: 0.75rem 1.65rem;
+        position: relative;
+        text-align: center;
+        text-decoration: none #000000 solid;
+        text-decoration-thickness: auto;
+        width: 100%;
+        max-width: 150px;
+        position: relative;
+        cursor: pointer;
+        transform: rotate(-2deg);
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+
+        & {
+            outline: 0;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            border: 1px solid #000000;
+            bottom: 4px;
+            left: 4px;
+            width: calc(100% - 1px);
+            height: calc(100% - 1px);
+        }
+
+        &:hover:after {
+            bottom: 2px;
+            left: 2px;
+        }
+
+        @media (min-width: 768px) {
+            & {
+                padding: 0.75rem 3rem;
+                font-size: 1.25rem;
+            }
+        }
+    }
+    .rgb {
+        transition: all 0.3s ease-in 0s;
+        opacity: 0;
+        max-height: 0;
+    }
+    .rgb.active {
+        opacity: 1;
+        max-height: 100%;
+    }
+    input[type="range"] {
+        -webkit-appearance: none; /* Removes default styles (Safari, Chrome) */
+        -moz-appearance: none; /* Removes default styles (Firefox) */
+        appearance: none; /* Removes default styles (modern browsers) */
+        width: 100%; /* Set the width of the range slider */
+        height: 8px; /* Height of the slider track */
+        background: #ddd; /* Track background color */
+        border-radius: 5px; /* Rounded corners for the track */
+        outline: none; /* Remove focus outline */
+        opacity: 0.9; /* Slight transparency */
+        transition: opacity 0.3s ease;
+
+        &:hover {
+            opacity: 1; /* Fully visible on hover */
+        }
+        &::-webkit-slider-runnable-track {
+            background: linear-gradient(to right, #d8ecee, #3bd7ee); /* Gradient color */
+            height: 8px; /* Height of the track */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer;
+        }
+
+        &::-moz-range-track {
+            background: linear-gradient(to right, #d8ecee, #3bd7ee);
+            height: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        &::-webkit-slider-thumb {
+            transform: translateY(-45%);
+            -webkit-appearance: none; /* Remove default appearance */
+            width: 20px; /* Width of the thumb */
+            height: 20px; /* Height of the thumb */
+            background: #ffffff; /* Thumb color */
+            border-radius: 50%; /* Circular thumb */
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
+        }
+
+        &::-moz-range-thumb {
+            transform: translateY(-45%);
+            width: 20px;
+            height: 20px;
+            background: #4caf50;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        &:active::-webkit-slider-thumb {
+            transform: scale(1.15) translateY(-45%);
+            background: #abf3ec; /* Change color when active */
+        }
+
+        &:focus::-webkit-slider-thumb {
+            outline: 2px solid #1edeef; /* Add a focus outline */
+        }
+    }
+}
+
+/*
+    Strip!
+  */
+
+.strip {
+    padding: 2rem;
+}
+
+.strip img {
+    width: 100px;
+    overflow-x: scroll;
+    padding: 0.8rem 0.8rem 2.5rem 0.8rem;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    background: white;
+}
+
+.strip a:nth-child(5n + 1) img {
+    transform: rotate(10deg);
+}
+.strip a:nth-child(5n + 2) img {
+    transform: rotate(-2deg);
+}
+.strip a:nth-child(5n + 3) img {
+    transform: rotate(8deg);
+}
+.strip a:nth-child(5n + 4) img {
+    transform: rotate(-11deg);
+}
+.strip a:nth-child(5n + 5) img {
+    transform: rotate(12deg);
+}

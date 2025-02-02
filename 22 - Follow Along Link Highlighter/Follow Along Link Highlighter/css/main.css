@@ -1,0 +1,144 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input {
+  outline: none;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*----------------*/
+body {
+  font-family: "Playfair Display";
+  font-size: 1rem;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0; /* Important! */
+  font-family: sans-serif;
+  background: linear-gradient(45deg, hsl(340, 100%, 55%) 0%, hsla(340, 100%, 55%, 0) 70%), linear-gradient(135deg, hsl(225, 95%, 50%) 10%, hsla(225, 95%, 50%, 0) 80%), linear-gradient(225deg, hsl(140, 90%, 50%) 10%, hsla(140, 90%, 50%, 0) 80%), linear-gradient(315deg, hsl(35, 95%, 55%) 100%, hsla(35, 95%, 55%, 0) 70%);
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 80vw;
+  font-size: 20px;
+  line-height: 2;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+}
+
+.highlight {
+  transition: all 0.2s;
+  border-bottom: 2px solid white;
+  position: absolute;
+  top: 0;
+  background: white;
+  left: 0;
+  z-index: -1;
+  border-radius: 20px;
+  display: block;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu {
+  padding: 0;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  margin: 100px 0;
+  flex-wrap: wrap;
+}
+.menu li {
+  margin: 5px 20px;
+}
+.menu a {
+  text-align: center;
+  font-size: 1.5rem;
+  display: inline-block;
+  padding: 10px;
+  color: black;
+}

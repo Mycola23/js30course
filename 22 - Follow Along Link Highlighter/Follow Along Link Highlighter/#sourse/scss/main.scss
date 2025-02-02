@@ -1,0 +1,85 @@
+@import "_nullstyle";
+@import "_mixin";
+//under development
+// promixes ------
+
+// Don`t forgot cascadeee ------
+html {
+}
+body {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+}
+
+.wrapper {
+    //display: flex;
+    //flex-direction: column;
+    //min-height: 100vh;
+    //background: linear-gradient(135deg, #7c1599 0%, #921099 48%, #7e4ae8 100%);
+    //background: #ffc600;
+    ///background-size: cover;
+    //justify-content: center;
+    //align-items: center;
+}
+
+[class*="__container"] {
+    // @include adaptive-value(padding-left, 15, 40, $minWidth, $maxWidth);
+    //@include adaptive-value(padding-right, 15, 40, $minWidth, $maxWidth);
+}
+
+body {
+    min-height: 100vh;
+    margin: 0; /* Important! */
+    font-family: sans-serif;
+    background: linear-gradient(45deg, hsla(340, 100%, 55%, 1) 0%, hsla(340, 100%, 55%, 0) 70%),
+        linear-gradient(135deg, hsla(225, 95%, 50%, 1) 10%, hsla(225, 95%, 50%, 0) 80%),
+        linear-gradient(225deg, hsla(140, 90%, 50%, 1) 10%, hsla(140, 90%, 50%, 0) 80%),
+        linear-gradient(315deg, hsla(35, 95%, 55%, 1) 100%, hsla(35, 95%, 55%, 0) 70%);
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 80vw;
+    font-size: 20px;
+    line-height: 2;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+}
+
+.highlight {
+    transition: all 0.2s;
+    border-bottom: 2px solid white;
+    position: absolute;
+    top: 0;
+    background: white;
+    left: 0;
+    z-index: -1;
+    border-radius: 20px;
+    display: block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu {
+    padding: 0;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    margin: 100px 0;
+    flex-wrap: wrap;
+    li {
+        margin: 5px 20px;
+    }
+    a {
+        text-align: center;
+        font-size: 1.5rem;
+        display: inline-block;
+        padding: 10px;
+        color: black;
+    }
+}

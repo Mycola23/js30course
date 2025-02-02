@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
+        <link rel="icon" href="https://fav.farm/🔥" />
+        <!-- change it on other-->
+        <title>Webcam Fun</title>
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="photobooth">
+                <div class="controls">
+                    <button class="controls__take-photo-btn">Take Photo</button>
+                    <div class="controls__filters">
+                        <input checked data-name="default" name="filter" type="radio" />
+                        <input data-name="green" name="filter" type="radio" />
+                        <input data-name="red" name="filter" type="radio" />
+                        <input data-name="rainbow" name="filter" type="radio" />
+                    </div>
+                    <div class="rgb">
+                        <label for="rmin">Red Min:</label>
+                        <input type="range" min="0" max="255" name="rmin" />
+                        <label for="rmax">Red Max:</label>
+                        <input type="range" min="0" max="255" name="rmax" />
+
+                        <br />
+
+                        <label for="gmin">Green Min:</label>
+                        <input type="range" min="0" max="255" name="gmin" />
+                        <label for="gmax">Green Max:</label>
+                        <input type="range" min="0" max="255" name="gmax" />
+
+                        <br />
+
+                        <label for="bmin">Blue Min:</label>
+                        <input type="range" min="0" max="255" name="bmin" />
+                        <label for="bmax">Blue Max:</label>
+                        <input type="range" min="0" max="255" name="bmax" />
+                    </div>
+                </div>
+
+                <canvas class="photo"></canvas>
+                <video class="player"></video>
+                <div class="strip"></div>
+            </div>
+
+            <audio class="snap" src="sounds/snap.mp3" hidden></audio>
+        </div>
+        <script type="module" src="js/script.js"></script>
+    </body>
+</html>
