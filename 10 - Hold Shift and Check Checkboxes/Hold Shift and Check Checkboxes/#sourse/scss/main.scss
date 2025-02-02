@@ -1,0 +1,72 @@
+@import "_nullstyle";
+@import "_mixin";
+//under development
+// promixes ------
+
+// Don`t forgot cascadeee ------
+html {
+}
+body {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #1935499e;
+    // background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+[class*="__container"] {
+    // @include adaptive-value(padding-left, 15, 40, $minWidth, $maxWidth);
+    //@include adaptive-value(padding-right, 15, 40, $minWidth, $maxWidth);
+}
+.inbox {
+    max-width: 80vw;
+    margin: 50px auto;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.item:last-child {
+    border-bottom: 0;
+}
+
+input:checked + p {
+    background: #f9f9f9;
+    text-decoration: line-through;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    margin: 20px;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 8px;
+    border: 2px solid #555;
+}
+input[type="checkbox"]:checked {
+    background: rgb(183, 221, 170);
+}
+p {
+    margin: 0;
+    padding: 20px;
+    transition: background 0.2s;
+    flex: 1;
+    font-family: "helvetica neue";
+    font-size: 35px;
+    font-weight: 200;
+    border-left: 1px solid #d1e2ff;
+}

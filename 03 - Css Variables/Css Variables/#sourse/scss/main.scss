@@ -1,0 +1,63 @@
+@import "_nullstyle";
+@import "_mixin";
+//under development
+// promixes ------
+
+// Don`t forgot cascadeee ------
+:root {
+    --spacing: 10px;
+    --blur: 10px;
+    --base: #ffc832;
+    --link: "https://media.istockphoto.com/id/860696690/photo/cityscapes.webp?a=1&b=1&s=612x612&w=0&k=20&c=-tufo7Vv90EAfqgUBh_D9d9gF23bVkVzVPYQW3vkUoI=";
+}
+html {
+}
+body {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #193549;
+
+    // background-size: cover;
+    justify-content: center;
+    align-items: center;
+    @include adaptive-value(font-size, 18, 35, $minWidth, $maxWidth);
+    @include adaptive-value(line-height, 22.5, 45, $minWidth, $maxWidth);
+    @include adaptive-value(padding-left, 15, 40, $minWidth, $maxWidth);
+    @include adaptive-value(padding-right, 15, 40, $minWidth, $maxWidth);
+}
+
+[class*="__container"] {
+    // @include adaptive-value(padding-left, 15, 40, $minWidth, $maxWidth);
+    //@include adaptive-value(padding-right, 15, 40, $minWidth, $maxWidth);
+}
+.controls {
+    margin-bottom: 50px;
+}
+
+input {
+    width: 100px;
+    border-radius: 20px;
+}
+input[type="color"]::-webkit-color-swatch {
+    border-radius: 20px;
+}
+
+img {
+    padding: var(--spacing);
+    filter: blur(var(--blur));
+    background-color: var(--base);
+    max-width: 100%;
+    margin-bottom: 15px;
+}
+.h1 {
+    @include adaptive-value(font-size, 20, 40, $minWidth, $maxWidth);
+    color: var(--base);
+    font-weight: bold;
+    -webkit-text-stroke: 2px #000;
+}

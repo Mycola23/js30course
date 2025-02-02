@@ -1,0 +1,156 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input {
+  outline: none;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*----------------*/
+body {
+  font-family: "Playfair Display";
+  font-size: 1rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #018ded url(https://unsplash.it/1500/1000?image=881&blur=5);
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  width: 30rem;
+  height: 30rem;
+  border: 20px solid rgba(255, 255, 255, 0.531);
+  border-radius: 50%;
+  margin: 50px auto;
+  position: relative;
+  padding: 2rem;
+  box-shadow: 0 0 20px 20px rgba(64, 247, 250, 0.1), inset 0 0 9px 4px #159ede, inset 1px -2px 17px rgb(11, 161, 207), 0 0 10px rgb(0, 170, 255);
+}
+.clock .clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px); /* account for the height of the clock hands */
+}
+.clock .hand {
+  width: 35%;
+  height: 35%;
+  border-radius: 75%;
+  background: linear-gradient(0deg, rgba(52, 239, 249, 0.7254901961), rgba(52, 170, 249, 0.7254901961));
+  box-shadow: inset -2px 0px 11px 3px #efefef;
+  position: absolute;
+  top: 50%;
+  left: -7.5%;
+  transition: all 0.05s cubic-bezier(0.97, 1.1, 0, 2.57) 0s;
+  transform-origin: 160%;
+  transform: translate(7.5%, -50%) rotate(90deg);
+}
+.clock span {
+  position: absolute;
+  color: #efefef;
+  font-size: 55px;
+  font-weight: 800;
+  text-shadow: 2px 2px 16px #fefafa;
+}
+.clock span:nth-child(1) {
+  left: 50%;
+  transform: translate(-50%);
+}
+.clock span:nth-child(2) {
+  left: 100%;
+  top: 50%;
+  transform: translate(-75%, -50%);
+}
+.clock span:nth-child(3) {
+  left: 50%;
+  top: 100%;
+  transform: translate(-75%, -100%);
+}
+.clock span:nth-child(4) {
+  left: -10%;
+  top: 50%;
+  transform: translate(75%, -50%);
+}

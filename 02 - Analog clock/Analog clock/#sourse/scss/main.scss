@@ -1,0 +1,91 @@
+@import "_nullstyle";
+@import "_mixin";
+//under development
+// promixes ------
+
+// Don`t forgot cascadeee ------
+html {
+}
+body {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #018ded url(https://unsplash.it/1500/1000?image=881&blur=5);
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+[class*="__container"] {
+    // @include adaptive-value(padding-left, 15, 40, $minWidth, $maxWidth);
+    //@include adaptive-value(padding-right, 15, 40, $minWidth, $maxWidth);
+}
+
+.clock {
+    width: 30rem;
+    height: 30rem;
+    border: 20px solid rgba(255, 255, 255, 0.531);
+
+    border-radius: 50%;
+    margin: 50px auto;
+    position: relative;
+    padding: 2rem;
+    box-shadow:
+        0 0 20px 20px rgba(64, 247, 250, 0.1),
+        inset 0 0 9px 4px #159ede,
+        inset 1px -2px 17px rgb(11, 161, 207),
+        0 0 10px rgb(0 170 255);
+
+    .clock-face {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform: translateY(-3px); /* account for the height of the clock hands */
+    }
+
+    .hand {
+        width: 35%;
+        height: 35%;
+        border-radius: 75%;
+        background: linear-gradient(0deg, #34eff9b9, #34aaf9b9); // #34eff9b9
+        box-shadow: inset -2px 0px 11px 3px #efefef;
+        position: absolute;
+        top: 50%;
+        left: -7.5%;
+
+        transition: all 0.05s cubic-bezier(0.97, 1.1, 0, 2.57) 0s;
+        transform-origin: 160%;
+        transform: translate(7.5%, -50%) rotate(90deg);
+    }
+    span {
+        position: absolute;
+        color: #efefef;
+        font-size: 55px;
+        font-weight: 800;
+        text-shadow: 2px 2px 16px #fefafa;
+    }
+    span:nth-child(1) {
+        left: 50%;
+        transform: translate(-50%);
+    }
+    span:nth-child(2) {
+        left: 100%;
+        top: 50%;
+        transform: translate(-75%, -50%);
+    }
+    span:nth-child(3) {
+        left: 50%;
+        top: 100%;
+        transform: translate(-75%, -100%);
+    }
+    span:nth-child(4) {
+        left: -10%;
+        top: 50%;
+        transform: translate(75%, -50%);
+    }
+}

@@ -1,0 +1,71 @@
+@import "_nullstyle";
+@import "_mixin";
+//under development
+// promixes ------
+
+// Don`t forgot cascadeee ------
+html {
+}
+body {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffc600 0%, #da4e2b 48%, #9ee84a 100%);
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+[class*="__container"] {
+    // @include adaptive-value(padding-left, 15, 40, $minWidth, $maxWidth);
+    //@include adaptive-value(padding-right, 15, 40, $minWidth, $maxWidth);
+}
+html {
+    background: #ffc600;
+    font-family: "helvetica neue";
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.site-wrap {
+    max-width: 700px;
+    margin: 100px auto;
+    background: white;
+    padding: 40px;
+    text-align: justify;
+}
+
+.align-left {
+    float: left;
+    margin-top: 5px;
+    margin-right: 20px;
+}
+
+.align-right {
+    float: right;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.slide-in {
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.align-left.slide-in {
+    transform: translateX(-30%) scale(0.65);
+}
+
+.align-right.slide-in {
+    transform: translateX(30%) scale(0.65);
+}
+
+.slide-in.active {
+    opacity: 1;
+    transform: translateX(0%) scale(1);
+}

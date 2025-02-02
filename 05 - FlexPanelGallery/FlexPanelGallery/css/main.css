@@ -1,0 +1,174 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input {
+  outline: none;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*----------------*/
+html {
+  background: #ffc600;
+  font-family: "helvetica neue";
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.panels {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  cursor: pointer;
+}
+
+.panel {
+  padding: 0 10px 0 10px;
+  flex: 1;
+  box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
+  color: white;
+  text-align: center;
+  align-items: center;
+  /* Safari transitionend event.propertyName === flex */
+  /* Chrome + FF transitionend event.propertyName === flex-grow */
+  transition: flex-grow 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11);
+  font-size: 20px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.panel1 {
+  background-image: url(https://media.istockphoto.com/id/1948035970/photo/sun-star-in-winter.webp?a=1&b=1&s=612x612&w=0&k=20&c=5upd8HzBy0BQuH4X3QkK56WFwrIECL-kJSnbFHF4FbA=);
+}
+
+.panel2 {
+  background-image: url(https://media.istockphoto.com/id/1080458394/photo/northern-lights-above-snowy-mountains-frozen-sea-coast.webp?a=1&b=1&s=612x612&w=0&k=20&c=WoGMwICUA5J9W95ucxY6GLZ53DWAtmAWMeynarOm2-Q=);
+}
+
+.panel3 {
+  background-image: url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d);
+}
+
+.panel4 {
+  background-image: url(https://images.unsplash.com/photo-1442522772768-9032b6d10e3e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGZveHxlbnwwfHwwfHx8MA%3D%3D);
+}
+
+.panel5 {
+  background-image: url(https://plus.unsplash.com/premium_photo-1679169220732-74bd589645e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHdpbmRzJTIwZmFybXN8ZW58MHx8MHx8fDA%3D);
+}
+
+/* Flex Children */
+.panel > * {
+  margin: 0;
+  width: 100%;
+  transition: transform 0.5s;
+}
+
+.panel > *:first-child {
+  transform: translateY(-100vh);
+}
+
+.panel > *:last-child {
+  transform: translateY(100vh);
+}
+
+.panel.open-active > *:first-child,
+.panel.open-active > *:last-child {
+  transform: translateY(0);
+}
+
+.panel p {
+  text-transform: uppercase;
+  font-family: "Amatic SC", cursive;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+  font-size: 2em;
+}
+
+.panel p:nth-child(2) {
+  font-size: 4em;
+}
+
+.panel.open {
+  flex: 5;
+  font-size: 35px;
+}

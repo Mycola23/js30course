@@ -1,0 +1,73 @@
+@import "_nullstyle";
+@import "_mixin";
+//under development
+// promixes ------
+
+// Don`t forgot cascadeee ------
+html {
+}
+body {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: url("/img/background.jpg") bottom center;
+    background-size: cover;
+}
+
+[class*="__container"] {
+    // @include adaptive-value(padding-left, 15, 40, $minWidth, $maxWidth);
+    //@include adaptive-value(padding-right, 15, 40, $minWidth, $maxWidth);
+}
+
+.keys {
+    padding: 0 15px 0 15px;
+    display: flex;
+    flex: 1;
+
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 1023.777px) {
+    .keys {
+        flex-wrap: wrap;
+    }
+}
+
+.key {
+    border: 0.4rem solid black;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    @include adaptive-value(font-size, 16, 24, $minWidth, $maxWidth);
+    padding: 1rem 0.5rem;
+    transition: all 0.07s ease;
+    width: 10rem;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    text-shadow: 0 0 0.5rem black;
+    &.playing {
+        transform: scale(1.3);
+        border-color: #ffc600;
+        box-shadow: 0 0 1rem #ffc600;
+    }
+}
+
+kbd {
+    display: block;
+    @include adaptive-value(font-size, 32, 64, $minWidth, $maxWidth);
+    //font-size: 64px;
+}
+
+.sound {
+    font-size: 1.2rem;
+    @include adaptive-value(font-size, 12, 19.2, $minWidth, $maxWidth);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #ffc600;
+}

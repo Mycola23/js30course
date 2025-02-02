@@ -1,0 +1,138 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input {
+  outline: none;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*----------------*/
+:root {
+  --spacing: 10px;
+  --blur: 10px;
+  --base: #ffc832;
+  --link: "https://media.istockphoto.com/id/860696690/photo/cityscapes.webp?a=1&b=1&s=612x612&w=0&k=20&c=-tufo7Vv90EAfqgUBh_D9d9gF23bVkVzVPYQW3vkUoI=";
+}
+
+body {
+  font-family: "Playfair Display";
+  font-size: 1rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #193549;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(18px + 17 * calc(100vw - (320px)) / 1120);
+  line-height: calc(22.5px + 22.5 * calc(100vw - (320px)) / 1120);
+  padding-left: calc(15px + 25 * calc(100vw - (320px)) / 1120);
+  padding-right: calc(15px + 25 * calc(100vw - (320px)) / 1120);
+}
+
+.controls {
+  margin-bottom: 50px;
+}
+
+input {
+  width: 100px;
+  border-radius: 20px;
+}
+
+input[type=color]::-webkit-color-swatch {
+  border-radius: 20px;
+}
+
+img {
+  padding: var(--spacing);
+  filter: blur(var(--blur));
+  background-color: var(--base);
+  max-width: 100%;
+  margin-bottom: 15px;
+}
+
+.h1 {
+  font-size: calc(20px + 20 * calc(100vw - (320px)) / 1120);
+  color: var(--base);
+  font-weight: bold;
+  -webkit-text-stroke: 2px #000;
+}
